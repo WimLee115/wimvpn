@@ -25,7 +25,7 @@ WimVPN is een VPN-platform volledig gebouwd in Rust met Python AI/ML modellen. H
 
 > Als je dit project interessant vindt, geef dan een ster! Het helpt het project zichtbaar te maken.
 
-**Copyright (c) 2026 WimLee115. Alle rechten voorbehouden.**
+**Copyright (c) 2025 WimLee115. Alle rechten voorbehouden.**
 
 ---
 
