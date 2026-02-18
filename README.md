@@ -1,459 +1,105 @@
-# SaiyanShield
+<p align="center">
+  <img src="https://img.shields.io/badge/%E2%9A%A1-SAIYANSHIELD-0A84FF?style=for-the-badge&labelColor=0D0D1A" alt="SaiyanShield" />
+</p>
 
-[![GitHub stars](https://img.shields.io/github/stars/WimLee115/saiyanshield?style=social)](https://github.com/WimLee115/saiyanshield/stargazers)
-[![CI](https://github.com/WimLee115/saiyanshield-dev/actions/workflows/ci.yml/badge.svg)](https://github.com/WimLee115/saiyanshield-dev/actions)
-[![Language](https://img.shields.io/badge/language-EN%20%7C%20NL-informational)](#-nederlands)
-[![Rust](https://img.shields.io/badge/rust-edition%202024-orange)](https://www.rust-lang.org/)
-[![License](https://img.shields.io/badge/license-Proprietary-blue)](#license)
+<p align="center">
+  <a href="https://github.com/WimLee115/saiyanshield/stargazers"><img src="https://img.shields.io/github/stars/WimLee115/saiyanshield?style=for-the-badge&color=FFD700&labelColor=0D0D1A&logo=github" alt="Stars" /></a>
+  <a href="https://github.com/WimLee115/saiyanshield-dev/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/WimLee115/saiyanshield-dev/ci.yml?style=for-the-badge&label=CI&labelColor=0D0D1A&color=0A84FF" alt="CI" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/Rust-Edition%202024-FF6B00?style=for-the-badge&logo=rust&labelColor=0D0D1A" alt="Rust" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/Python-3.12%2B-FFD700?style=for-the-badge&logo=python&labelColor=0D0D1A" alt="Python" /></a>
+  <a href="#-steun-dit-project"><img src="https://img.shields.io/badge/%E2%9D%A4%EF%B8%8F-Steun%20Dit%20Project-FF2D55?style=for-the-badge&labelColor=0D0D1A" alt="Support" /></a>
+</p>
 
-```
-       /\    /\
-      /  \  /  \       ____        _                  ____  _     _      _     _
-     / /\ \/ /\ \     / ___|  __ _(_)_   _  __ _ _ _ / ___|| |__ (_) ___| | __| |
-    / /  \/  /  \ \   \___ \ / _` | | | | |/ _` | '_| \___ \| '_ \| |/ _ \ |/ _` |
-   / /   /\   /  \ \   ___) | (_| | | |_| | (_| | | | ___) | | | | |  __/ | (_| |
-  / /___/  \_/___\ \  |____/ \__,_|_|\__, |\__,_|_| |____/|_| |_|_|\___|_|\__,_|
-  \/               \/                 |___/
-
-  "I am the prince of all Saiyans!"  — Vegeta
-  Power level: OVER 9000!
-```
-
-**Next-Generation Post-Quantum VPN Platform**
-
-> *"My Saiyan pride won't let me lose!"* — Vegeta
-
-SaiyanShield is a VPN platform built entirely in Rust with Python AI/ML models. It combines post-quantum cryptography, triple-layer symmetric encryption, integrated traffic obfuscation with decoy traffic, multi-adapter bonding, 20 real-time health monitoring algorithms (Scouter technology), an autonomous AI Analyst engine and a Dragon Ball Z-themed Vegeta Command Dashboard — in a single statically linked binary.
-
-> If you find this project interesting, give it a star! It helps make the project visible.
-
-**Copyright (c) 2026 WimLee115. All rights reserved.**
-
----
-
-## Overview
-
-> *"It's over 9000!"* — Vegeta
-
-| Statistic | Value |
-|-----------|-------|
-| Rust codebase | 28,100+ lines |
-| Python AI/ML | 2,700+ lines |
-| Workspace crates | 14 Rust + 1 Python |
-| Tests | 250+ (all green) |
-| Benchmarks | 6 suites (Criterion) |
-| Fuzz targets | 6 (libfuzzer) |
-| Health algorithms | 20 (4 categories) |
-| AI correlation rules | 8 |
-| Threat categories | 13 |
-| MITRE ATT&CK mappings | 13 |
-| Encryption layers | 3 (ChaCha20 → AES-256 → XChaCha20) |
-| Stealth modes | 6 |
-| Watermark layers | 5 |
-
----
-
-## Post-Quantum Cryptography
-
-> *"My power is superior to yours!"* — Vegeta
-
-### Hybrid Key Exchange
-
-An attacker must break **both** schemes — even a quantum computer isn't enough:
-
-- **ML-KEM-1024 (Kyber)** — FIPS 203 quantum-safe key encapsulation
-- **X25519** — Classical ECDH as defense-in-depth
-- **HKDF-SHA-512** — Domain-separated key derivation per encryption layer
-- **AEAD-encrypted static key** — Initiator's public key encrypted with KEM shared secret during handshake
-- **Directional session keys** — Separate send/recv cipher per role (initiator/responder)
-
-### Hybrid Authentication
-
-- **ML-DSA-87 (Dilithium5)** — FIPS 204 post-quantum digital signatures
-- **Ed25519** — Classical signature backup
-- **BLAKE3** — Hashing for fingerprints and integrity
-- **Constant-time comparisons** — `subtle` crate against timing side-channels
-- **Zeroize** — Automatic memory cleanup of secret keys
-
-### Triple-Layer Encryption — Final Flash Protection
-
-Every data packet passes through three independent ciphers in series:
-
-| Layer | Algorithm | Nonce | Property |
-|-------|-----------|-------|----------|
-| 1 | ChaCha20-Poly1305 | 12 bytes | Constant-time, software-only |
-| 2 | AES-256-GCM | 12 bytes | Hardware-accelerated (AES-NI) |
-| 3 | XChaCha20-Poly1305 | 24 bytes | Extended nonce, misuse-resistant |
-
-Overhead per packet: 96 bytes (48 bytes nonces + 48 bytes authentication tags).
-
----
-
-## 20 Scouter Health Algorithms
-
-> *"His power level... it's over 9000!"* — Vegeta's Scouter
-
-Real-time health monitoring across 4 categories. All algorithms use real runtime metrics (latency, bandwidth, packet loss, CPU, memory, key rotations, handshakes).
-
-### Network (6)
-
-| # | Algorithm | Method |
-|---|-----------|--------|
-| 1 | Latency Monitor | RTT measurement and trend analysis |
-| 2 | Bandwidth Analyzer | Throughput tracking and capacity estimation |
-| 3 | Packet Loss Detector | Loss ratio monitoring with threshold alerts |
-| 4 | Jitter Calculator | Inter-packet delay variation analysis |
-| 5 | Stability Index | Composite score: latency + packet loss + key rotations |
-| 6 | Congestion Predictor | Latency trend + packet loss + bandwidth variance |
-
-### Security (7)
-
-| # | Algorithm | Method |
-|---|-----------|--------|
-| 7 | DNS Leak Detector | Detects DNS queries outside the tunnel |
-| 8 | IP Leak Prevention | IPv4/IPv6 address exposure detection |
-| 9 | WebRTC Leak Guard | STUN/TURN IP disclosure prevention |
-| 10 | Certificate Checker | Certificate chains and expiration |
-| 11 | Protocol Integrity | Packet structure and sequence number verification |
-| 12 | Firewall Auditor | Kill-switch firewall rule validation |
-| 13 | Zero-Day Scanner (ML) | Multi-signal: error spikes + traffic anomalies + resource abuse + packet ratio |
-
-### Performance (4)
-
-| # | Algorithm | Method |
-|---|-----------|--------|
-| 14 | Encryption Perf | Cipher throughput and latency measurement |
-| 15 | Memory Tracker | RSS and heap usage monitoring |
-| 16 | CPU Balancer | Load distribution across encryption threads |
-| 17 | Route Optimizer (ML) | 4-factor evaluation: latency + bandwidth + packet loss + key rotation health |
-
-### AI/ML (3)
-
-| # | Algorithm | Method |
-|---|-----------|--------|
-| 18 | Traffic Pattern Analyzer (ML) | 3-factor: packet size entropy + inter-arrival variance + bandwidth deviation |
-| 19 | Anomaly Detector (ML) | 6-feature: error rate + CPU + memory + packet loss + latency + key rotation |
-| 20 | Threat Intel Monitor (ML) | 5-signal: error rate + amplification + resource pressure + stability + bandwidth |
-
----
-
-## AI Analyst Engine
-
-> *"You are nothing compared to a real Saiyan warrior!"* — Vegeta
-
-Autonomous investigation engine:
-
-- **8 correlation rules** — DPI Analysis, MITM, Data Exfiltration, Crypto Weakness, DNS Attack, Resource Exhaustion, Bandwidth Throttling, Endpoint Compromise
-- **Hypothesis engine** — Template matching, evidence testing, confidence scoring
-- **13 threat categories** — Each with MITRE ATT&CK mapping
-- **Investigation lifecycle** — Open → Analyzing → Concluded → Dismissed
-- **NLG report generator** — Reasoning chains with verdict and tags
-- **Alert fatigue reduction** — Max 10/hour, auto-dismiss after recovery
-
-### Python ML Models
-
-| Model | Architecture | Function |
-|-------|-------------|----------|
-| EventCorrelationGAT | Graph Attention Network | Event correlation |
-| InvestigationTransformer | Transformer + CLS-token | Threat classification |
-| HypothesisScorerMLP | 4-layer MLP + BatchNorm | Confidence calibration |
-| AnomalyDetector | Autoencoder | Anomaly detection |
-| TrafficClassifier | CNN | Traffic classification |
-| ThreatPredictor | LSTM | Threat prediction |
-| RouteOptimizerRL | Reinforcement Learning | Route optimization |
-| CongestionPredictor | GRU | Congestion prediction |
-
----
-
-## Ki-Suppression — Traffic Obfuscation
-
-> *"You can't sense my ki!"* — Vegeta in Stealth Mode
-
-Fully integrated in client and server — all VPN packets are automatically wrapped and unwrapped based on the configured stealth mode.
-
-| Feature | Description |
-|---------|-------------|
-| HTTPS disguise | VPN traffic wrapped as TLS 1.3 Application Data records |
-| WebSocket disguise | Traffic via WebSocket binary frames with masking |
-| DNS-over-HTTPS | Traffic disguised as DoH queries |
-| Domain fronting | TLS ClientHello SNI manipulation via CDN front domains |
-| Decoy traffic | Poisson-distributed decoy traffic via `DecoyGenerator` (configurable interval) |
-| Timing defense | Constant-time padding against analysis |
-| Packet padding | Uniform packet size (256/512/1024/1500) |
-
-### Domain Fronting
-
-Real TLS ClientHello parsing and SNI replacement:
-
-- Parses TLS record header, handshake header, session ID, cipher suites, compression methods, extensions
-- Finds SNI extension (type 0x0000), extracts hostname
-- Replaces hostname with front domain
-- Restores all TLS length fields (record, handshake, extensions, SNI)
-
----
-
-## Vegeta Command Dashboard
-
-> *"Final Flash!"* — Vegeta
-
-Dragon Ball Z-themed web dashboard at `http://localhost:3000`:
-
-- **Ki-energy rain** — Canvas-based with katakana + Saiyan symbols
-- **Saiyan color scheme** — Blue (#0A84FF), Gold (#FFD700), Orange aura (#FF6B00)
-- **Theme switcher** — Saiyan Mode / Stealth Mode / Super Saiyan Mode
-- **Bilingual** — Full English/Dutch language switcher
-- **Vegeta boot intro** — Power level scanning with Vegeta quotes
-- **Final Flash connect** — "FINAL FLASH ACTIVATE!" authentication
-- **Real-time Scouter matrix** — 20 algorithms with color-coded power levels
-- **Bandwidth/latency charts** — CSS bar charts (30 data points, color-coded)
-- **AI Analyst feed** — Live investigations with verdict, tags and confidence
-- **SSE streaming** — Real-time updates via Server-Sent Events
-- **Token authentication** — Auto-generated token at startup
-
----
-
-## Architecture
+<br/>
 
 ```
-                         ┌───────────────────┐
-                         │  saiyanshield-core │
-                         │   (orchestrator)   │
-                         └───────┬───────────┘
-                                 │
-  ┌──────────┬──────────┬───────┼───────┬──────────┬──────────┐
-  │          │          │       │       │          │          │
-┌─┴──────┐┌─┴───────┐┌─┴─────┐│┌──────┴─┐┌──────┴─┐┌──────┴──┐
-│ crypto ││protocol ││tunnel │││stealth ││ health ││ analyst │
-│  (PQ)  ││ (wire)  ││ (TUN) │││(ki-hid)││(scouter││  (AI)   │
-└────────┘└─────────┘└───────┘│└────────┘└────────┘└─────────┘
-                              │
-                    ┌─────────┴───────────┐
-                    │ saiyanshield-dashboard│
-                    │  (Vegeta Command     │
-                    │   terminal UI)       │
-                    └────────┬────────────┘
-                             │
-              ┌──────────────┼──────────────┐
-              │              │              │
-        ┌─────┴────┐  ┌─────┴────┐  ┌──────┴─────┐
-        │  client  │  │  server  │  │ watermark  │
-        │(CLI+dash)│  │ (multi-  │  │(5-layer PQ)│
-        └──────────┘  │ client)  │  └────────────┘
-                      └──────────┘
-              ┌──────────────┬──────────────┐
-              │              │              │
-        ┌─────┴────┐  ┌─────┴────┐  ┌──────┴─────┐
-        │ adapter  │  │  macros  │  │saiyanshield│
-        │(bonding) │  │(proc-mac)│  │-ai (Python)│
-        └──────────┘  └──────────┘  └────────────┘
+                              ╱╲
+                             ╱  ╲
+                            ╱ ╱╲ ╲              ▓▓▓▓▓   ▓▓▓▓   ▓▓ ▓▓  ▓▓  ▓▓▓▓  ▓▓▓▓
+                           ╱ ╱  ╲ ╲             ▓▓     ▓▓  ▓▓  ▓▓ ▓▓  ▓▓ ▓▓  ▓▓ ▓▓  ▓▓
+                          ╱ ╱ ╱╲ ╲ ╲            ▓▓▓▓▓  ▓▓▓▓▓▓  ▓▓  ▓▓▓  ▓▓▓▓▓▓ ▓▓  ▓▓
+                         ╱ ╱ ╱  ╲ ╲ ╲               ▓▓ ▓▓  ▓▓  ▓▓   ▓   ▓▓  ▓▓ ▓▓  ▓▓
+                        ╱ ╱ ╱ ╱╲ ╲ ╲ ╲          ▓▓▓▓▓  ▓▓  ▓▓  ▓▓   ▓   ▓▓  ▓▓ ▓▓  ▓▓
+                       ╱ ╱ ╱ ╱  ╲ ╲ ╲ ╲
+                      ╱▁╱▁╱▁╱    ╲▁╲▁╲▁╲        S A I Y A N S H I E L D
+
+                           ⚡ Quantum-Resistant AI-Driven VPN ⚡
 ```
 
-### 14 Rust Crates
+<p align="center">
+  <strong>Bescherming die je verdient. Privacy die je recht is.</strong>
+</p>
 
-| Crate | Description |
-|-------|-------------|
-| `saiyanshield-core` | Orchestrator: VPN engine, state machine, kill switch, DNS, split tunneling, metrics collector, key persistence |
-| `saiyanshield-crypto` | Post-quantum: ML-KEM-1024 + X25519, ML-DSA-87 + Ed25519, triple-layer encryption, AEAD helpers, signed updates |
-| `saiyanshield-protocol` | Wire protocol: PQ handshake with encrypted static key, directional sessions, key rotation, anti-replay |
-| `saiyanshield-tunnel` | TUN device: async I/O via tokio, gateway management |
-| `saiyanshield-adapter` | Multi-adapter bonding: failover, round robin, weighted, aggregate |
-| `saiyanshield-stealth` | Ki-suppression: HTTPS/WebSocket/DoH disguise, domain fronting with SNI manipulation, decoy traffic |
-| `saiyanshield-health` | 20 Scouter algorithms in 4 categories, ML-based heuristics |
-| `saiyanshield-analyst` | AI Analyst: 8 correlation rules, hypothesis engine, 13 threat classes, MITRE ATT&CK |
-| `saiyanshield-dashboard` | Vegeta Command Dashboard: DBZ theme, SSE streaming, REST API |
-| `saiyanshield-watermark` | 5-layer watermark: compile-time BLAKE3, runtime, steganography, PQ signatures, protocol |
-| `saiyanshield-macros` | Procedural macros for zero-boilerplate configuration |
-| `saiyanshield-client` | Client binary: PQ handshake, TUN routing, kill switch, dashboard server |
-| `saiyanshield-server` | Server binary: multi-client, TUN + NAT, per-client IP allocation |
-| `saiyanshield-ai` | Python: 8 ML models (GAT, Transformer, MLP, LSTM, GRU, CNN, RL, Autoencoder) |
+<p align="center">
+  <em>"Mijn Saiyan-trots laat me niet verliezen!" — Vegeta</em>
+</p>
 
 ---
 
-## Quick Start
+<br/>
 
-### Requirements
+## Waarom SaiyanShield?
 
-- Rust 1.85+ (2024 edition)
-- C compiler (for pqcrypto native libraries)
-- Linux (kernel 3.x+ for TUN support)
-- Root privileges (sudo) for TUN device, iptables and route configuration
-- Python 3.10+ with PyTorch (optional, for AI/ML model training)
+> **Privacy is geen privilege. Het is een fundamenteel mensenrecht.**
 
-### Build
+In een wereld waar overheden massasurveillance inzetten, techbedrijven elk datapunt verzamelen en internetproviders je verkeer loggen, verdien jij een schild dat sterker is dan alles wat ze erop afsturen.
 
-```bash
-# Build all crates
-cargo build --release
+SaiyanShield is niet gebouwd voor multinationals of geheime diensten. Het is gebouwd voor **jou** — de burger die gelooft dat privacommunicatie, vrij browsen en digitale autonomie **voor ieder mens** beschikbaar moeten zijn. Ongeacht wie je bent, waar je woont, of hoeveel macht je hebt.
 
-# Run all tests
-cargo test --workspace
+Dit project is gemaakt met **liefde en toewijding** door een onafhankelijke ontwikkelaar. Elke regel code is geschreven met de overtuiging dat technologie de mens moet beschermen, niet in de gaten houden.
 
-# Lint check
-cargo clippy -- -D warnings
-```
-
-### Start Server
-
-```bash
-sudo ./target/release/saiyanshield-server \
-    --bind 0.0.0.0 \
-    --port 51820 \
-    --verbose
-```
-
-### Start Client
-
-```bash
-sudo ./target/release/saiyanshield-client \
-    --server 127.0.0.1 \
-    --port 51820 \
-    --stealth-mode https \
-    --dashboard-port 3000 \
-    --verbose
-```
-
-### Dashboard
-
-```
-http://localhost:3000
-```
-
-Token is shown at startup or found in `/tmp/saiyanshield-dashboard-token`.
+<br/>
 
 ---
 
-## Feature Scripts
+## Wat maakt SaiyanShield anders?
 
-```bash
-./20 [token]                    # Scouter matrix — 20 algorithms with power level bars
-./On-Device [train|export|all]  # ML pipeline — training, ONNX export, evaluation
-./Triple-Layer [info|verify]    # Cipher stack info and encryption verification
-./Traffic [status|test-fronting] # Ki-suppression tests
-./Web [start|status|test]       # Dashboard management
-```
+<table>
+<tr>
+<td width="50%" valign="top">
 
----
+### Post-Quantum Encryptie
+Vandaag veilig, morgen ook. Hybride cryptografie die zelfs toekomstige quantumcomputers niet kunnen breken.
 
-## Kill Switch — Saiyan Barrier
+**ML-KEM-1024 + X25519** sleuteluitwisseling<br/>
+**ML-DSA-87 + Ed25519** authenticatie<br/>
+**Triple-layer** encryptie per pakket
 
-> *"Nobody gets through here!"* — Vegeta
+</td>
+<td width="50%" valign="top">
 
-Fail-closed firewall via dedicated `SAIYANSHIELD_KILLSWITCH` iptables chain:
+### AI-Gedreven Bescherming
+20 intelligente algoritmen bewaken je verbinding in real-time als een digitale scouter.
 
-- Blocks all traffic outside the VPN tunnel
-- DNS leak prevention via `SAIYANSHIELD_DNS` chain
-- Automatic cleanup on shutdown (also via `Drop` trait)
-- Retry logic: 3 attempts + emergency flush
+**Autonome AI Analyst** — Detecteert, onderzoekt en rapporteert dreigingen automatisch<br/>
+**8 ML-modellen** — Van traffic classificatie tot route-optimalisatie
 
----
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
 
-## Dashboard API
+### Onzichtbaar Verkeer
+Geavanceerde traffic obfuscation maakt je VPN-verkeer ononderscheidbaar van normaal internetverkeer.
 
-| Method | Path | Description |
-|--------|------|-------------|
-| GET | `/` | Dashboard SPA |
-| GET | `/api/status` | Connection status, version, uptime, cipher suite |
-| GET | `/api/metrics` | Live traffic and performance metrics |
-| GET | `/api/health` | 20 Scouter algorithm reports |
-| GET | `/api/config` | VPN configuration |
-| POST | `/api/connect` | Start connection |
-| POST | `/api/disconnect` | Stop connection |
-| GET | `/api/alerts` | Active health alerts |
-| GET | `/api/events` | SSE stream real-time updates |
-| GET | `/api/analyst/summary` | AI Analyst statistics |
-| GET | `/api/analyst/investigations` | Investigations (filter/pagination) |
-| GET | `/api/analyst/active` | Active investigations |
-| GET | `/api/watermark/verify` | Watermark integrity check |
+**6 stealth modi** — HTTPS, WebSocket, DNS-over-HTTPS, Domain Fronting<br/>
+**Dekverkeer** — Automatische decoy packets
 
----
+</td>
+<td width="50%" valign="top">
 
-## Security Model
+### 100% Open & Transparant
+Volledig gebouwd in Rust en Python. Elke component is auditeerbaar, elke beslissing traceerbaar.
 
-> *"A true Saiyan always fights alone!"* — Vegeta
+**30.000+ regels** Rust<br/>
+**268 tests** — Alle groen<br/>
+**6 benchmark suites** — Meetbaar snel
 
-| Measure | Implementation |
-|---------|---------------|
-| Post-quantum hybrid | ML-KEM-1024 + X25519, ML-DSA-87 + Ed25519 |
-| Triple-layer encryption | 3 independent ciphers, separately derived keys |
-| Directional key isolation | Separate send/recv ciphers per session role |
-| AEAD-encrypted handshake | Static public key encrypted with KEM shared secret |
-| Encrypted session confirmation | Session confirmation via session cipher, not plaintext |
-| Persistent identity keys | Server/client keys stored on disk (0600 permissions) |
-| Constant-time crypto | `subtle` crate for all comparisons |
-| Anti-replay | Sliding window bitmap on incoming packets |
-| Source address validation | Server validates packets from expected IP |
-| Kill switch | Dedicated iptables chains, fail-closed |
-| Key rotation | Automatic every 60 seconds |
-| Zeroization | All secret keys via `Zeroize` trait |
-| Security headers | CSP, X-Frame-Options, XCTO, Referrer-Policy |
-| Forward secrecy | Key rotation ratchet destroys old keys (proven with tests) |
-| Config validation | Startup validation of all configuration fields |
-| 5-layer watermark | Compile-time, runtime, steganography, signatures, protocol |
+</td>
+</tr>
+</table>
 
----
-
-## Benchmarks
-
-Performance benchmarks via [Criterion.rs](https://github.com/bheisler/criterion.rs) in 6 suites:
-
-| Suite | What is measured |
-|-------|-----------------|
-| `crypto_bench` | KEM keypair/encap/decap, triple-layer encrypt/decrypt, packet serialization |
-| `protocol_bench` | Handshake roundtrip, session encrypt/decrypt (100B-10KB), multi-hop circuit build, onion encrypt |
-| `signing_bench` | HybridSigner keypair generation, sign (32B/1KB), verify |
-| `health_bench` | All 20 Scouter algorithms, per category (Network/Security/Performance/AiMl) |
-| `analyst_bench` | AnalystEngine ingest: healthy batch, attack batch |
-| `stealth_bench` | Domain fronting SNI replacement, watermark verification |
-
-```bash
-cargo bench                        # All benchmarks
-cargo bench --bench crypto_bench   # Single suite
-```
-
----
-
-## Multi-Adapter Bonding
-
-Optional multi-adapter support for redundancy and bandwidth aggregation:
-
-| Strategy | Description |
-|----------|-------------|
-| Failover | Automatic switchover on adapter failure |
-| Round Robin | Packets distributed across active adapters |
-| Weighted | Selection based on quality score (latency + packet loss) |
-| Aggregate | All adapters simultaneously for maximum throughput |
-
-- **Auto-detection** of WiFi adapters via `/sys/class/net`
-- **Health monitoring** with configurable thresholds (latency, packet loss)
-- **SO_BINDTODEVICE** binding for source-based routing
-- **Configurable** via `[adapters]` section in config
-
----
-
-## Key Management
-
-Persistent identity keys for server and client:
-
-- **Auto-generate** — Keys are generated on first startup if they don't exist
-- **Secure storage** — Files with `0600` permissions (owner only)
-- **Server**: KEM + signing keypairs in `/etc/saiyanshield/keys/`
-- **Client**: KEM + signing keypairs in `/etc/saiyanshield/client-keys/`
-- **Server public key distribution** — Client loads server public key via `server_public_key_path` config
-
----
-
-## License
-
-**Copyright (c) 2026 WimLee115. All rights reserved.**
-
-Made by [WimLee115](https://github.com/WimLee115)
-
-> *"Kakarot... I will surpass you!"* — Vegeta
-
----
----
-
-# 🇳🇱 Nederlands
+<br/>
 
 ---
 
@@ -461,23 +107,22 @@ Made by [WimLee115](https://github.com/WimLee115)
 
 > *"Het is over de 9000!"* — Vegeta
 
-| Statistiek | Waarde |
-|------------|--------|
-| Rust codebase | 28.100+ regels |
-| Python AI/ML | 2.700+ regels |
-| Workspace crates | 14 Rust + 1 Python |
-| Tests | 250+ (alle groen) |
-| Benchmarks | 6 suites (Criterion) |
-| Fuzz targets | 6 (libfuzzer) |
-| Health algoritmen | 20 (4 categorieën) |
-| AI correlatie-regels | 8 |
-| Threat categorieën | 13 |
-| MITRE ATT&CK mappings | 13 |
-| Encryptielagen | 3 (ChaCha20 → AES-256 → XChaCha20) |
-| Stealth modi | 6 |
-| Watermerklagen | 5 |
+<table>
+<tr><td><strong>Rust codebase</strong></td><td>30.900+ regels</td></tr>
+<tr><td><strong>Python AI/ML</strong></td><td>2.700+ regels</td></tr>
+<tr><td><strong>Workspace</strong></td><td>14 Rust crates + 1 Python package</td></tr>
+<tr><td><strong>Tests</strong></td><td>268 (alle groen)</td></tr>
+<tr><td><strong>Benchmarks</strong></td><td>6 suites (Criterion)</td></tr>
+<tr><td><strong>Fuzz targets</strong></td><td>6 (libfuzzer)</td></tr>
+<tr><td><strong>Health algoritmen</strong></td><td>20 (4 categorieen)</td></tr>
+<tr><td><strong>AI correlatie-regels</strong></td><td>8</td></tr>
+<tr><td><strong>MITRE ATT&CK mappings</strong></td><td>13</td></tr>
+<tr><td><strong>Encryptielagen</strong></td><td>3 (ChaCha20 > AES-256 > XChaCha20)</td></tr>
+<tr><td><strong>Stealth modi</strong></td><td>6</td></tr>
+<tr><td><strong>Watermerklagen</strong></td><td>5</td></tr>
+</table>
 
-SaiyanShield is een VPN-platform volledig gebouwd in Rust met Python AI/ML modellen. Het combineert post-quantum cryptografie, drielaagse symmetrische encryptie, geïntegreerde traffic obfuscation met decoy verkeer, multi-adapter bonding, 20 real-time health monitoring algoritmen (Scouter-technologie), een autonome AI Analyst engine en een Dragon Ball Z-thema Vegeta Command Dashboard — in een enkele statisch gelinkte binary.
+<br/>
 
 ---
 
@@ -487,13 +132,13 @@ SaiyanShield is een VPN-platform volledig gebouwd in Rust met Python AI/ML model
 
 ### Hybride Sleuteluitwisseling
 
-Een aanvaller moet **beide** schema's breken — zelfs een quantum computer is niet genoeg:
+Een aanvaller moet **beide** schema's breken — zelfs een quantumcomputer is niet genoeg:
 
 - **ML-KEM-1024 (Kyber)** — FIPS 203 quantum-safe key encapsulation
 - **X25519** — Klassiek ECDH als defense-in-depth
 - **HKDF-SHA-512** — Domein-gescheiden sleutelafleiding per encryptielaag
-- **AEAD-encrypted static key** — Initiator's publieke sleutel versleuteld met KEM shared secret in handshake
-- **Directionele sessiesleutels** — Gescheiden send/recv cipher per rol (initiator/responder)
+- **AEAD-encrypted handshake** — Publieke sleutel versleuteld met KEM shared secret
+- **Directionele sessiesleutels** — Gescheiden send/recv cipher per rol
 
 ### Hybride Authenticatie
 
@@ -503,17 +148,19 @@ Een aanvaller moet **beide** schema's breken — zelfs een quantum computer is n
 - **Constant-time vergelijkingen** — `subtle` crate tegen timing side-channels
 - **Zeroize** — Automatische geheugenopruiming van geheime sleutels
 
-### Triple-Layer Encryptie — Final Flash Bescherming
+### Triple-Layer Encryptie
 
 Elk datapakket passeert drie onafhankelijke ciphers in serie:
 
 | Laag | Algoritme | Nonce | Eigenschap |
-|------|-----------|-------|------------|
+|:----:|-----------|:-----:|------------|
 | 1 | ChaCha20-Poly1305 | 12 bytes | Constant-time, software-only |
 | 2 | AES-256-GCM | 12 bytes | Hardware-accelerated (AES-NI) |
 | 3 | XChaCha20-Poly1305 | 24 bytes | Extended nonce, misuse-resistant |
 
-Overhead per pakket: 96 bytes (48 bytes nonces + 48 bytes authenticatie-tags).
+> Overhead per pakket: 96 bytes (48 bytes nonces + 48 bytes authenticatie-tags)
+
+<br/>
 
 ---
 
@@ -521,47 +168,61 @@ Overhead per pakket: 96 bytes (48 bytes nonces + 48 bytes authenticatie-tags).
 
 > *"Zijn power level... het is over de 9000!"* — Vegeta's Scouter
 
-Real-time gezondheidsmonitoring over 4 categorieën. Alle algoritmen gebruiken echte runtime metrics (latency, bandwidth, packet loss, CPU, geheugen, key rotations, handshakes).
+Real-time gezondheidsmonitoring over 4 categorieen. Alle algoritmen gebruiken echte runtime metrics.
 
-### Network (6)
+<details>
+<summary><strong>Network (6)</strong></summary>
 
 | # | Algoritme | Methode |
-|---|-----------|---------|
+|:-:|-----------|---------|
 | 1 | Latency Monitor | RTT meting en trendanalyse |
 | 2 | Bandwidth Analyzer | Doorvoer tracking en capaciteitsschatting |
 | 3 | Packet Loss Detector | Verliesratio monitoring met drempelwaarschuwingen |
-| 4 | Jitter Calculator | Inter-packet delay variatie analyse |
-| 5 | Stability Index | Samengestelde score: latency + packet loss + key rotations |
-| 6 | Congestion Predictor | Latency trend + packet loss + bandwidth variance |
+| 4 | Jitter Calculator | IPDV analyse (standaarddeviatie van opeenvolgende latency-deltas) |
+| 5 | Stability Index | 5-factor gewogen score: latency, loss, bandwidth, jitter, trend |
+| 6 | Congestion Predictor | ML/heuristiek: latency trend + packet loss + bandwidth variance |
 
-### Security (7)
+</details>
+
+<details>
+<summary><strong>Security (7)</strong></summary>
 
 | # | Algoritme | Methode |
-|---|-----------|---------|
+|:-:|-----------|---------|
 | 7 | DNS Leak Detector | Detecteert DNS-queries buiten de tunnel |
-| 8 | IP Leak Prevention | IPv4/IPv6-adresblootstelling |
-| 9 | WebRTC Leak Guard | STUN/TURN IP-onthulling preventie |
-| 10 | Certificate Checker | Certificaatketens en vervaldatum |
-| 11 | Protocol Integrity | Pakketstructuur en volgnummer verificatie |
+| 8 | IP Leak Prevention | Routing table analyse, tunnel default route verificatie |
+| 9 | WebRTC Leak Guard | STUN port scanning + browser process detectie |
+| 10 | Certificate Checker | OpenSSL x509 expiry verificatie met caching |
+| 11 | Protocol Integrity | 4-signaal: handshake, error ratio, key rotation, packet asymmetrie |
 | 12 | Firewall Auditor | Kill-switch firewallregel validatie |
-| 13 | Zero-Day Scanner (ML) | Multi-signaal: error spikes + traffic anomalieën + resource abuse + packet ratio |
+| 13 | Zero-Day Scanner (ML) | Multi-signaal: error spikes + traffic anomalieen + resource abuse |
 
-### Performance (4)
+</details>
+
+<details>
+<summary><strong>Performance (4)</strong></summary>
 
 | # | Algoritme | Methode |
-|---|-----------|---------|
-| 14 | Encryption Perf | Cipher doorvoer en latentie meting |
+|:-:|-----------|---------|
+| 14 | Encryption Perf | Cipher doorvoer per seconde (MB/s) |
 | 15 | Memory Tracker | RSS- en heap-gebruik monitoring |
 | 16 | CPU Balancer | Lastverdeling over encryptiethreads |
-| 17 | Route Optimizer (ML) | 4-factor evaluatie: latency + bandwidth + packet loss + key rotation health |
+| 17 | Route Optimizer (ML) | ONNX model + heuristiek fallback |
 
-### AI/ML (3)
+</details>
+
+<details>
+<summary><strong>AI/ML (3)</strong></summary>
 
 | # | Algoritme | Methode |
-|---|-----------|---------|
-| 18 | Traffic Pattern Analyzer (ML) | 3-factor: packet size entropy + inter-arrival variance + bandwidth deviation |
+|:-:|-----------|---------|
+| 18 | Traffic Pattern (ML) | ONNX model + heuristiek fallback |
 | 19 | Anomaly Detector (ML) | 6-feature: error rate + CPU + memory + packet loss + latency + key rotation |
-| 20 | Threat Intel Monitor (ML) | 5-signaal: error rate + amplification + resource pressure + stability + bandwidth |
+| 20 | Threat Intel (ML) | 5-signaal: error rate + amplification + resource pressure + stability |
+
+</details>
+
+<br/>
 
 ---
 
@@ -569,14 +230,29 @@ Real-time gezondheidsmonitoring over 4 categorieën. Alle algoritmen gebruiken e
 
 > *"Je bent niks vergeleken met een echte Saiyan krijger!"* — Vegeta
 
-Autonome investigatie-engine:
+Autonome investigatie-engine geinspireerd door Darktrace:
 
-- **8 correlatie-regels** — DPI Analysis, MITM, Data Exfiltration, Crypto Weakness, DNS Attack, Resource Exhaustion, Bandwidth Throttling, Endpoint Compromise
+- **8 correlatie-regels** — DPI, MITM, Data Exfiltration, Crypto Weakness, DNS Attack, Resource Exhaustion, Bandwidth Throttling, Endpoint Compromise
 - **Hypothese-engine** — Template matching, evidence testing, confidence scoring
-- **13 threat categorieën** — Elk met MITRE ATT&CK mapping
-- **Investigatie lifecycle** — Open → Analyzing → Concluded → Dismissed
+- **13 threat categorieen** — Elk met MITRE ATT&CK mapping
+- **Investigatie lifecycle** — Open > Analyzing > Concluded > Dismissed
 - **NLG rapport generator** — Reasoning chains met verdict en tags
 - **Alert fatigue reductie** — Max 10/uur, auto-dismiss na herstel
+
+### Python ML Modellen
+
+| Model | Architectuur | Functie |
+|-------|:------------:|---------|
+| EventCorrelationGAT | Graph Attention Network | Event correlatie |
+| InvestigationTransformer | Transformer + CLS | Threat classificatie |
+| HypothesisScorerMLP | 4-layer MLP | Confidence calibratie |
+| AnomalyDetector | Autoencoder | Anomalie detectie |
+| TrafficClassifier | CNN | Traffic classificatie |
+| ThreatPredictor | LSTM | Threat voorspelling |
+| RouteOptimizerRL | Reinforcement Learning | Route optimalisatie |
+| CongestionPredictor | GRU | Congestie voorspelling |
+
+<br/>
 
 ---
 
@@ -584,17 +260,17 @@ Autonome investigatie-engine:
 
 > *"Je kunt mijn ki niet voelen!"* — Vegeta in Stealth Mode
 
-Volledig geïntegreerd in client en server — alle VPN-pakketten worden automatisch verpakt en uitgepakt op basis van de geconfigureerde stealth modus.
-
 | Feature | Beschrijving |
 |---------|-------------|
 | HTTPS vermomming | VPN-verkeer verpakt als TLS 1.3 Application Data records |
 | WebSocket vermomming | Verkeer via WebSocket binary frames met masking |
 | DNS-over-HTTPS | Verkeer vermomd als DoH queries |
 | Domain fronting | TLS ClientHello SNI-manipulatie via CDN front-domeinen |
-| Dekverkeer | Poisson-verdeeld dekverkeer via `DecoyGenerator` (configureerbaar interval) |
+| Dekverkeer | Poisson-verdeeld dekverkeer via `DecoyGenerator` |
 | Timing verdediging | Constant-time padding tegen analyse |
 | Pakketpadding | Uniforme pakketgrootte (256/512/1024/1500) |
+
+<br/>
 
 ---
 
@@ -604,111 +280,70 @@ Volledig geïntegreerd in client en server — alle VPN-pakketten worden automat
 
 Dragon Ball Z-thema web dashboard op `http://localhost:3000`:
 
-- **Ki-energy rain** — Canvas-gebaseerd met katakana + Saiyan symbolen
 - **Saiyan kleurenschema** — Blauw (#0A84FF), Goud (#FFD700), Oranje aura (#FF6B00)
 - **Theme switcher** — Saiyan Mode / Stealth Mode / Super Saiyan Mode
 - **Tweetalig** — Volledige Engels/Nederlands taalwisselaar
 - **Vegeta boot intro** — Power level scanning met Vegeta quotes
-- **Final Flash connect** — "FINAL FLASH ACTIVATE!" authenticatie
 - **Real-time Scouter matrix** — 20 algoritmen met kleurgecodeerde power levels
-- **Bandwidth/latency grafieken** — CSS bar charts (30 datapunten, color-coded)
 - **AI Analyst feed** — Live investigations met verdict, tags en confidence
+- **Digital Twin** — Real-time netwerk topologie visualisatie
+- **Auto-Ops** — Autonome remediation met escalatie-management
 - **SSE streaming** — Real-time updates via Server-Sent Events
-- **Token-authenticatie** — Auto-generated token bij opstart
+- **Sessie-beveiliging** — Token verloopt automatisch bij sluiten browser
+
+<br/>
 
 ---
 
-## Kill Switch — Saiyan Barrier
+## Architectuur
 
-> *"Niemand komt hier doorheen!"* — Vegeta
+```
+                             ┌─────────────────────┐
+                             │  saiyanshield-core   │
+                             │    (orchestrator)    │
+                             └──────────┬──────────┘
+                                        │
+     ┌──────────┬──────────┬────────────┼────────────┬──────────┬──────────┐
+     │          │          │            │            │          │          │
+  ┌──┴───┐  ┌──┴────┐  ┌──┴───┐  ┌─────┴─────┐  ┌──┴────┐  ┌──┴────┐  ┌─┴────┐
+  │crypto│  │protocol│  │tunnel│  │ dashboard │  │stealth│  │health │  │analyst│
+  │ (PQ) │  │ (wire) │  │(TUN) │  │ (Vegeta   │  │(ki)   │  │(scout)│  │ (AI) │
+  └──────┘  └───────┘  └──────┘  │  Command) │  └───────┘  └───────┘  └──────┘
+                                  └─────┬─────┘
+                       ┌────────────────┼────────────────┐
+                       │                │                │
+                  ┌────┴───┐      ┌─────┴────┐     ┌─────┴─────┐
+                  │ client │      │  server  │     │ watermark │
+                  │(CLI+UI)│      │ (multi)  │     │(5-layer)  │
+                  └────────┘      └──────────┘     └───────────┘
+                       ┌────────────────┼────────────────┐
+                       │                │                │
+                  ┌────┴───┐      ┌─────┴────┐     ┌─────┴─────┐
+                  │adapter │      │  macros  │     │    ai     │
+                  │(bond)  │      │ (proc)   │     │ (Python)  │
+                  └────────┘      └──────────┘     └───────────┘
+```
 
-Fail-closed firewall via dedicated `SAIYANSHIELD_KILLSWITCH` iptables chain:
+### 14 Rust Crates + 1 Python Package
 
-- Blokkeert al het verkeer buiten de VPN tunnel
-- DNS leak preventie via `SAIYANSHIELD_DNS` chain
-- Automatische opruiming bij afsluiting (ook via `Drop` trait)
-- Retry logica: 3 pogingen + emergency flush
+| Crate | Beschrijving |
+|-------|-------------|
+| `saiyanshield-core` | Orchestrator: VPN engine, state machine, kill switch, DNS, metrics, key persistence |
+| `saiyanshield-crypto` | Post-quantum: ML-KEM + X25519, ML-DSA + Ed25519, triple-layer, AEAD, signed updates |
+| `saiyanshield-protocol` | Wire protocol: PQ handshake, directional sessions, key rotation, anti-replay |
+| `saiyanshield-tunnel` | TUN device: async I/O via tokio, gateway management |
+| `saiyanshield-adapter` | Multi-adapter bonding: failover, round robin, weighted, aggregate |
+| `saiyanshield-stealth` | Ki-suppression: HTTPS/WebSocket/DoH, domain fronting, decoy traffic |
+| `saiyanshield-health` | 20 Scouter algoritmen in 4 categorieen, ML-heuristieken, parallel execution |
+| `saiyanshield-analyst` | AI Analyst: 8 correlatie-regels, hypothese-engine, 13 threat classes, MITRE ATT&CK |
+| `saiyanshield-dashboard` | Vegeta Command Dashboard: DBZ theme, SSE, REST API, Digital Twin |
+| `saiyanshield-watermark` | 5-laags watermerk: compile-time BLAKE3, runtime, steganografie, PQ signatures |
+| `saiyanshield-macros` | Procedural macros voor zero-boilerplate configuratie |
+| `saiyanshield-client` | Client binary: PQ handshake, TUN routing, kill switch, dashboard server |
+| `saiyanshield-server` | Server binary: multi-client, TUN + NAT, per-client IP allocatie |
+| `saiyanshield-ai` | Python: 8 ML modellen (GAT, Transformer, MLP, LSTM, GRU, CNN, RL, Autoencoder) |
 
----
-
-## Dashboard API
-
-| Method | Pad | Beschrijving |
-|--------|-----|-------------|
-| GET | `/` | Dashboard SPA |
-| GET | `/api/status` | Verbindingsstatus, versie, uptime, cipher suite |
-| GET | `/api/metrics` | Live verkeers- en prestatiemetrics |
-| GET | `/api/health` | 20 Scouter algoritme rapporten |
-| GET | `/api/config` | VPN configuratie |
-| POST | `/api/connect` | Verbinding starten |
-| POST | `/api/disconnect` | Verbinding verbreken |
-| GET | `/api/alerts` | Actieve health alerts |
-| GET | `/api/events` | SSE stream real-time updates |
-| GET | `/api/analyst/summary` | AI Analyst statistieken |
-| GET | `/api/analyst/investigations` | Investigations (filter/paginatie) |
-| GET | `/api/analyst/active` | Actieve investigations |
-| GET | `/api/watermark/verify` | Watermerk integriteitscheck |
-
----
-
-## Beveiligingsmodel
-
-> *"Een ware Saiyan vecht altijd alleen!"* — Vegeta
-
-| Maatregel | Implementatie |
-|-----------|--------------|
-| Post-quantum hybride | ML-KEM-1024 + X25519, ML-DSA-87 + Ed25519 |
-| Triple-layer encryptie | 3 onafhankelijke ciphers, apart afgeleide sleutels |
-| Directionele sleutelisolatie | Gescheiden send/recv ciphers per sessierol |
-| AEAD-encrypted handshake | Static public key versleuteld met KEM shared secret |
-| Versleutelde sessiebevestiging | Session confirmation via sessie-cipher, niet plaintext |
-| Persistente identiteitssleutels | Server/client sleutels opgeslagen op schijf (0600 permissies) |
-| Constant-time crypto | `subtle` crate voor alle vergelijkingen |
-| Anti-replay | Sliding window bitmap op inkomende packets |
-| Bron-adres validatie | Server valideert packets van verwacht IP |
-| Kill switch | Dedicated iptables chains, fail-closed |
-| Sleutelrotatie | Automatisch elke 60 seconden |
-| Zeroization | Alle geheime sleutels via `Zeroize` trait |
-| Security headers | CSP, X-Frame-Options, XCTO, Referrer-Policy |
-| Forward secrecy | Key rotation ratchet vernietigt oude sleutels (bewezen met tests) |
-| Config validatie | Startup-validatie van alle configuratievelden |
-| 5-laags watermerk | Compile-time, runtime, steganografie, signatures, protocol |
-
----
-
-## Benchmarks
-
-| Suite | Wat wordt gemeten |
-|-------|-------------------|
-| `crypto_bench` | KEM keypair/encap/decap, triple-layer encrypt/decrypt, packet serialisatie |
-| `protocol_bench` | Handshake roundtrip, session encrypt/decrypt (100B-10KB), multi-hop circuit build, onion encrypt |
-| `signing_bench` | HybridSigner keypair generatie, sign (32B/1KB), verify |
-| `health_bench` | Alle 20 Scouter algoritmen, per categorie (Network/Security/Performance/AiMl) |
-| `analyst_bench` | AnalystEngine ingest: gezonde batch, attack batch |
-| `stealth_bench` | Domain fronting SNI-vervanging, watermark verificatie |
-
----
-
-## Multi-Adapter Bonding
-
-| Strategie | Beschrijving |
-|-----------|-------------|
-| Failover | Automatische overschakeling bij adapter-falen |
-| Round Robin | Pakketten verdeeld over actieve adapters |
-| Weighted | Selectie op basis van kwaliteitsscore (latency + packet loss) |
-| Aggregate | Alle adapters tegelijk voor maximale doorvoer |
-
----
-
-## Sleutelbeheer
-
-Persistente identiteitssleutels voor server en client:
-
-- **Automatisch genereren** — Sleutels worden gegenereerd bij eerste opstart als ze niet bestaan
-- **Veilige opslag** — Bestanden met `0600` permissies (alleen eigenaar)
-- **Server**: KEM + signing keypairs in `/etc/saiyanshield/keys/`
-- **Client**: KEM + signing keypairs in `/etc/saiyanshield/client-keys/`
-- **Server public key distributie** — Client laadt server public key via `server_public_key_path` config
+<br/>
 
 ---
 
@@ -716,52 +351,157 @@ Persistente identiteitssleutels voor server en client:
 
 ### Vereisten
 
-- Rust 1.85+ (2024 edition)
+- Rust 1.88+ (2024 edition)
 - C compiler (voor pqcrypto native libraries)
 - Linux (kernel 3.x+ voor TUN ondersteuning)
 - Root rechten (sudo) voor TUN device, iptables en route configuratie
 - Python 3.10+ met PyTorch (optioneel, voor AI/ML model training)
 
-### Bouwen
+### Bouwen & Testen
 
 ```bash
 # Bouw alle crates
 cargo build --release
 
-# Draai alle tests
+# Draai alle 268 tests
 cargo test --workspace
 
 # Lint check
 cargo clippy -- -D warnings
 ```
 
-### Server starten
+### Starten
 
 ```bash
-sudo ./target/release/saiyanshield-server \
-    --bind 0.0.0.0 \
-    --port 51820 \
-    --verbose
-```
+# Automatische setup + start
+./scripts/start.sh
 
-### Client starten
-
-```bash
+# Of handmatig:
 sudo ./target/release/saiyanshield-client \
     --server 127.0.0.1 \
     --port 51820 \
-    --stealth-mode https \
-    --dashboard-port 3000 \
-    --verbose
+    --dashboard-port 3000
+
+# Dashboard openen
+open http://localhost:3000
 ```
 
-### Dashboard
+### Stoppen
 
-```
-http://localhost:3000
+```bash
+# Veilig afsluiten + alle logs vernietigen
+./scripts/stop.sh
 ```
 
-Token wordt getoond bij opstart of staat in `/tmp/saiyanshield-dashboard-token`.
+<br/>
+
+---
+
+## Kill Switch — Saiyan Barrier
+
+> *"Niemand komt hier doorheen!"* — Vegeta
+
+Fail-closed firewall via dedicated iptables chains:
+
+- **`SAIYANSHIELD_KILLSWITCH`** — Blokkeert al het verkeer buiten de VPN tunnel
+- **`SAIYANSHIELD_DNS`** — DNS leak preventie
+- Automatische opruiming bij afsluiting (ook via `Drop` trait)
+- Retry logica: 3 pogingen + emergency flush
+
+<br/>
+
+---
+
+## Beveiligingsmodel
+
+| Maatregel | Implementatie |
+|-----------|--------------|
+| Post-quantum hybride | ML-KEM-1024 + X25519, ML-DSA-87 + Ed25519 |
+| Triple-layer encryptie | 3 onafhankelijke ciphers, apart afgeleide sleutels |
+| Directionele sleutelisolatie | Gescheiden send/recv ciphers per sessierol |
+| AEAD-encrypted handshake | Static public key versleuteld met KEM shared secret |
+| Constant-time crypto | `subtle` crate voor alle vergelijkingen |
+| Anti-replay | Sliding window bitmap op inkomende packets |
+| Kill switch | Dedicated iptables chains, fail-closed |
+| Sleutelrotatie | Automatisch elke 60 seconden |
+| Zeroization | Alle geheime sleutels via `Zeroize` trait |
+| Forward secrecy | Key rotation ratchet vernietigt oude sleutels |
+| Security headers | CSP, X-Frame-Options, XCTO, Referrer-Policy |
+| 5-laags watermerk | Compile-time, runtime, steganografie, signatures, protocol |
+
+<br/>
+
+---
+
+## Dashboard API
+
+| Methode | Pad | Beschrijving |
+|:-------:|-----|-------------|
+| GET | `/` | Dashboard SPA |
+| GET | `/api/status` | Verbindingsstatus, versie, uptime |
+| GET | `/api/metrics` | Live verkeers- en prestatiemetrics |
+| GET | `/api/health` | 20 Scouter algoritme rapporten |
+| GET | `/api/config` | VPN configuratie |
+| POST | `/api/connect` | Verbinding starten |
+| POST | `/api/disconnect` | Verbinding verbreken |
+| POST | `/api/baseline/reset` | Metrics resetten |
+| GET | `/api/alerts` | Actieve health alerts |
+| GET | `/api/events` | SSE stream (real-time) |
+| GET | `/api/analyst/summary` | AI Analyst statistieken |
+| GET | `/api/analyst/investigations` | Investigations (filter/paginatie) |
+| GET | `/api/analyst/active` | Actieve investigations |
+
+<br/>
+
+---
+
+## Benchmarks
+
+| Suite | Wat wordt gemeten |
+|-------|-------------------|
+| `crypto_bench` | KEM keypair/encap/decap, triple-layer encrypt/decrypt |
+| `protocol_bench` | Handshake roundtrip, session encrypt/decrypt, multi-hop circuit |
+| `signing_bench` | HybridSigner keypair, sign, verify |
+| `health_bench` | Alle 20 Scouter algoritmen, per categorie |
+| `analyst_bench` | AnalystEngine ingest: gezonde batch, attack batch |
+| `stealth_bench` | Domain fronting SNI-vervanging, watermark verificatie |
+
+```bash
+cargo bench                       # Alle benchmarks
+cargo bench --bench crypto_bench  # Enkele suite
+```
+
+<br/>
+
+---
+
+<h2 id="-steun-dit-project">Steun Dit Project</h2>
+
+> *"Zelfs de sterkste Saiyan heeft bondgenoten nodig."*
+
+SaiyanShield wordt ontwikkeld door **een onafhankelijke developer** — zonder corporate sponsors, zonder investeerders, zonder advertenties. Puur uit overtuiging dat privacy een fundamenteel recht is voor **ieder mens**.
+
+Het onderhouden en doorontwikkelen van een project van deze omvang — 30.000+ regels Rust, 8 ML-modellen, 20 health algoritmen, post-quantum cryptografie — kost enorm veel tijd en energie. Elke bijdrage, hoe klein ook, helpt om dit project levend te houden en beschikbaar te maken voor iedereen die het nodig heeft.
+
+**Waarom jouw steun ertoe doet:**
+
+- Servers en infrastructuur kosten geld
+- Security audits zijn essentieel maar duur
+- Fulltime ontwikkeling betekent geen ander inkomen
+- Elke euro helpt om SaiyanShield gratis en onafhankelijk te houden
+
+### Hoe kun je helpen?
+
+| Manier | Link |
+|--------|------|
+| GitHub Sponsors | [Sponsor @WimLee115](https://github.com/sponsors/WimLee115) |
+| Geef een ster | [Star dit project](https://github.com/WimLee115/saiyanshield) |
+| Deel het woord | Vertel anderen over SaiyanShield |
+| Rapporteer bugs | [Issues](https://github.com/WimLee115/saiyanshield/issues) |
+
+> Geen geld? Geen probleem. Een ster op GitHub, een retweet, of het vertellen aan een vriend die om privacy geeft — het maakt allemaal verschil. Samen bouwen we een veiliger internet.
+
+<br/>
 
 ---
 
@@ -769,6 +509,20 @@ Token wordt getoond bij opstart of staat in `/tmp/saiyanshield-dashboard-token`.
 
 **Copyright (c) 2026 WimLee115. Alle rechten voorbehouden.**
 
-Gemaakt door [WimLee115](https://github.com/WimLee115)
+---
 
-> *"Kakarot... Ik zal je overtreffen!"* — Vegeta
+<p align="center">
+  <br/>
+  <strong>Gemaakt met liefde en toewijding door <a href="https://github.com/WimLee115">WimLee115</a></strong>
+  <br/>
+  <br/>
+  <em>Voor iedere burger die privacy een belangrijk recht vindt.</em>
+  <br/>
+  <em>Niet alleen voor de grote machten — maar voor ons allemaal.</em>
+  <br/>
+  <br/>
+  <em>"Kakarot... Ik zal je overtreffen!"</em> — Vegeta
+  <br/>
+  <br/>
+  <img src="https://img.shields.io/badge/Power%20Level-OVER%209000-FFD700?style=flat-square&labelColor=0D0D1A" alt="Power Level" />
+</p>
