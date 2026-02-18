@@ -1,27 +1,28 @@
-# WimVPN
+# SaiyanShield
 
-[![GitHub stars](https://img.shields.io/github/stars/WimLee115/wimvpn?style=social)](https://github.com/WimLee115/wimvpn/stargazers)
-[![CI](https://github.com/WimLee115/wimvpn-dev/actions/workflows/ci.yml/badge.svg)](https://github.com/WimLee115/wimvpn-dev/actions)
+[![GitHub stars](https://img.shields.io/github/stars/WimLee115/saiyanshield?style=social)](https://github.com/WimLee115/saiyanshield/stargazers)
+[![CI](https://github.com/WimLee115/saiyanshield-dev/actions/workflows/ci.yml/badge.svg)](https://github.com/WimLee115/saiyanshield-dev/actions)
 [![Rust](https://img.shields.io/badge/rust-edition%202024-orange)](https://www.rust-lang.org/)
 [![License](https://img.shields.io/badge/license-Proprietary-blue)](#licentie)
 
 ```
-        ░░░░░░░
-      ░░░░░░░░░░░
-     ░░░░░░░░░░░░░     W I M V P N
-    ░░░░░▓▓▓▓░░░░░░    ───────────
-   ░░░░░▓▓██▓▓░░░░░░   Quantum-Resistant
-   ░░░░▓▓████▓▓░░░░░   AI-Driven VPN
-    ░░░▓▓▓▓▓▓▓▓░░░░
-     ░░░░░░░░░░░░░      "A whole new world
-      ░░░░░▒▒░░░░        of security"
-        ░░▒▒▒░░
-          ▒▒▒
+       /\    /\
+      /  \  /  \       ____        _                  ____  _     _      _     _
+     / /\ \/ /\ \     / ___|  __ _(_)_   _  __ _ _ _ / ___|| |__ (_) ___| | __| |
+    / /  \/  /  \ \   \___ \ / _` | | | | |/ _` | '_| \___ \| '_ \| |/ _ \ |/ _` |
+   / /   /\   /  \ \   ___) | (_| | | |_| | (_| | | | ___) | | | | |  __/ | (_| |
+  / /___/  \_/___\ \  |____/ \__,_|_|\__, |\__,_|_| |____/|_| |_|_|\___|_|\__,_|
+  \/               \/                 |___/
+
+  "Ik ben de prins van alle Saiyans!"  — Vegeta
+  Power level: OVER 9000!
 ```
 
 **Next-Generation Post-Quantum VPN Platform**
 
-WimVPN is een VPN-platform volledig gebouwd in Rust met Python AI/ML modellen. Het combineert post-quantum cryptografie, drielaagse symmetrische encryptie, geïntegreerde traffic obfuscation met decoy verkeer, multi-adapter bonding, 20 real-time health monitoring algoritmen, een autonome AI Analyst engine en een terminal-stijl Matrix/Aladdin dashboard — in een enkele statisch gelinkte binary.
+> *"Mijn trots als Saiyan laat mij niet verliezen!"* — Vegeta
+
+SaiyanShield is een VPN-platform volledig gebouwd in Rust met Python AI/ML modellen. Het combineert post-quantum cryptografie, drielaagse symmetrische encryptie, geïntegreerde traffic obfuscation met decoy verkeer, multi-adapter bonding, 20 real-time health monitoring algoritmen (Scouter-technologie), een autonome AI Analyst engine en een Dragon Ball Z-thema Vegeta Command Dashboard — in een enkele statisch gelinkte binary.
 
 > Als je dit project interessant vindt, geef dan een ster! Het helpt het project zichtbaar te maken.
 
@@ -30,6 +31,8 @@ WimVPN is een VPN-platform volledig gebouwd in Rust met Python AI/ML modellen. H
 ---
 
 ## Overzicht
+
+> *"Het is over de 9000!"* — Vegeta
 
 | Statistiek | Waarde |
 |------------|--------|
@@ -51,9 +54,11 @@ WimVPN is een VPN-platform volledig gebouwd in Rust met Python AI/ML modellen. H
 
 ## Post-Quantum Cryptografie
 
+> *"Mijn kracht is superieur aan de jouwe!"* — Vegeta
+
 ### Hybride Sleuteluitwisseling
 
-Een aanvaller moet **beide** schema's breken:
+Een aanvaller moet **beide** schema's breken — zelfs een quantum computer is niet genoeg:
 
 - **ML-KEM-1024 (Kyber)** — FIPS 203 quantum-safe key encapsulation
 - **X25519** — Klassiek ECDH als defense-in-depth
@@ -69,7 +74,7 @@ Een aanvaller moet **beide** schema's breken:
 - **Constant-time vergelijkingen** — `subtle` crate tegen timing side-channels
 - **Zeroize** — Automatische geheugenopruiming van geheime sleutels
 
-### Triple-Layer Encryptie
+### Triple-Layer Encryptie — Final Flash Bescherming
 
 Elk datapakket passeert drie onafhankelijke ciphers in serie:
 
@@ -83,7 +88,9 @@ Overhead per pakket: 96 bytes (48 bytes nonces + 48 bytes authenticatie-tags).
 
 ---
 
-## 20 Health Monitoring Algoritmen
+## 20 Scouter Health Algoritmen
+
+> *"Zijn power level... het is over de 9000!"* — Vegeta's Scouter
 
 Real-time gezondheidsmonitoring over 4 categorieën. Alle algoritmen gebruiken echte runtime metrics (latency, bandwidth, packet loss, CPU, geheugen, key rotations, handshakes).
 
@@ -131,7 +138,9 @@ Real-time gezondheidsmonitoring over 4 categorieën. Alle algoritmen gebruiken e
 
 ## AI Analyst Engine
 
-Autonome investigatie-engine geïnspireerd op Darktrace:
+> *"Je bent niks vergeleken met een echte Saiyan krijger!"* — Vegeta
+
+Autonome investigatie-engine:
 
 - **8 correlatie-regels** — DPI Analysis, MITM, Data Exfiltration, Crypto Weakness, DNS Attack, Resource Exhaustion, Bandwidth Throttling, Endpoint Compromise
 - **Hypothese-engine** — Template matching, evidence testing, confidence scoring
@@ -155,7 +164,9 @@ Autonome investigatie-engine geïnspireerd op Darktrace:
 
 ---
 
-## Traffic Obfuscation
+## Ki-Onderdrukking — Traffic Obfuscation
+
+> *"Je kunt mijn ki niet voelen!"* — Vegeta in Stealth Mode
 
 Volledig geïntegreerd in client en server — alle VPN-pakketten worden automatisch verpakt en uitgepakt op basis van de geconfigureerde stealth modus.
 
@@ -180,43 +191,45 @@ Echte TLS ClientHello parsing en SNI-vervanging:
 
 ---
 
-## Dashboard
+## Vegeta Command Dashboard
 
-Terminal-stijl Matrix/Aladdin web dashboard op `http://localhost:3000`:
+> *"Final Flash!"* — Vegeta
 
-- **Matrix digital rain** — Canvas-gebaseerd met katakana + Arabische karakters
-- **CRT/scanline effecten** — Retro terminal-look met glow en flicker
-- **ASCII magic lamp logo** — Boot intro met 12 geanimeerde init-regels
-- **Real-time health matrix** — 20 algoritmen met kleurgecodeerde scores
+Dragon Ball Z-thema web dashboard op `http://localhost:3000`:
+
+- **Ki-energy rain** — Canvas-gebaseerd met katakana + Saiyan symbolen
+- **Saiyan kleurenschema** — Blauw (#0A84FF), Goud (#FFD700), Oranje aura (#FF6B00)
+- **Theme switcher** — Saiyan Mode / Stealth Mode / Super Saiyan Mode
+- **Vegeta boot intro** — Power level scanning met Vegeta quotes
+- **Final Flash connect** — "FINAL FLASH ACTIVATE!" authenticatie
+- **Real-time Scouter matrix** — 20 algoritmen met kleurgecodeerde power levels
 - **Bandwidth/latency grafieken** — CSS bar charts (30 datapunten, color-coded)
 - **AI Analyst feed** — Live investigations met verdict, tags en confidence
 - **SSE streaming** — Real-time updates via Server-Sent Events
 - **Token-authenticatie** — Auto-generated token bij opstart
-
-Kleurenschema: matrix green (#00ff41), gold accents (#d4af37), threat red op zwarte achtergrond.
 
 ---
 
 ## Architectuur
 
 ```
-                         ┌───────────────┐
-                         │  wimvpn-core   │
-                         │ (orchestrator) │
-                         └───────┬───────┘
+                         ┌───────────────────┐
+                         │  saiyanshield-core │
+                         │   (orchestrator)   │
+                         └───────┬───────────┘
                                  │
   ┌──────────┬──────────┬───────┼───────┬──────────┬──────────┐
   │          │          │       │       │          │          │
 ┌─┴──────┐┌─┴───────┐┌─┴─────┐│┌──────┴─┐┌──────┴─┐┌──────┴──┐
 │ crypto ││protocol ││tunnel │││stealth ││ health ││ analyst │
-│  (PQ)  ││ (wire)  ││ (TUN) │││(obfsc.)││(20alg.)││  (AI)   │
+│  (PQ)  ││ (wire)  ││ (TUN) │││(ki-hid)││(scouter││  (AI)   │
 └────────┘└─────────┘└───────┘│└────────┘└────────┘└─────────┘
                               │
-                    ┌─────────┴─────────┐
-                    │  wimvpn-dashboard  │
-                    │  (Matrix/Aladdin   │
-                    │   terminal UI)     │
-                    └────────┬──────────┘
+                    ┌─────────┴───────────┐
+                    │ saiyanshield-dashboard│
+                    │  (Vegeta Command     │
+                    │   terminal UI)       │
+                    └────────┬────────────┘
                              │
               ┌──────────────┼──────────────┐
               │              │              │
@@ -228,8 +241,8 @@ Kleurenschema: matrix green (#00ff41), gold accents (#d4af37), threat red op zwa
               ┌──────────────┬──────────────┐
               │              │              │
         ┌─────┴────┐  ┌─────┴────┐  ┌──────┴─────┐
-        │ adapter  │  │  macros  │  │  wimvpn-ai │
-        │(bonding) │  │(proc-mac)│  │  (Python)  │
+        │ adapter  │  │  macros  │  │saiyanshield│
+        │(bonding) │  │(proc-mac)│  │-ai (Python)│
         └──────────┘  └──────────┘  └────────────┘
 ```
 
@@ -237,20 +250,20 @@ Kleurenschema: matrix green (#00ff41), gold accents (#d4af37), threat red op zwa
 
 | Crate | Beschrijving |
 |-------|-------------|
-| `wimvpn-core` | Orchestrator: VPN engine, state machine, kill switch, DNS, split tunneling, metrics collector, key persistence |
-| `wimvpn-crypto` | Post-quantum: ML-KEM-1024 + X25519, ML-DSA-87 + Ed25519, triple-layer encryptie, AEAD helpers, signed updates |
-| `wimvpn-protocol` | Wire protocol: PQ handshake met encrypted static key, directional sessions, key rotation, anti-replay |
-| `wimvpn-tunnel` | TUN device: async I/O via tokio, gateway management |
-| `wimvpn-adapter` | Multi-adapter bonding: failover, round robin, weighted, aggregate |
-| `wimvpn-stealth` | Obfuscatie: HTTPS/WebSocket/DoH vermomming, domain fronting met SNI-manipulatie, dekverkeer |
-| `wimvpn-health` | 20 health algoritmen in 4 categorieën, ML-gebaseerde heuristics |
-| `wimvpn-analyst` | AI Analyst: 8 correlatie-regels, hypothese-engine, 13 threat classes, MITRE ATT&CK |
-| `wimvpn-dashboard` | Terminal-stijl Matrix/Aladdin dashboard, SSE streaming, REST API |
-| `wimvpn-watermark` | 5-laags watermerk: compile-time BLAKE3, runtime, steganografie, PQ signatures, protocol |
-| `wimvpn-macros` | Procedural macro's voor zero-boilerplate configuratie |
-| `wimvpn-client` | Client binary: PQ handshake, TUN routing, kill switch, dashboard server |
-| `wimvpn-server` | Server binary: multi-client, TUN + NAT, per-client IP allocatie |
-| `wimvpn-ai` | Python: 8 ML modellen (GAT, Transformer, MLP, LSTM, GRU, CNN, RL, Autoencoder) |
+| `saiyanshield-core` | Orchestrator: VPN engine, state machine, kill switch, DNS, split tunneling, metrics collector, key persistence |
+| `saiyanshield-crypto` | Post-quantum: ML-KEM-1024 + X25519, ML-DSA-87 + Ed25519, triple-layer encryptie, AEAD helpers, signed updates |
+| `saiyanshield-protocol` | Wire protocol: PQ handshake met encrypted static key, directional sessions, key rotation, anti-replay |
+| `saiyanshield-tunnel` | TUN device: async I/O via tokio, gateway management |
+| `saiyanshield-adapter` | Multi-adapter bonding: failover, round robin, weighted, aggregate |
+| `saiyanshield-stealth` | Ki-onderdrukking: HTTPS/WebSocket/DoH vermomming, domain fronting met SNI-manipulatie, dekverkeer |
+| `saiyanshield-health` | 20 Scouter algoritmen in 4 categorieën, ML-gebaseerde heuristics |
+| `saiyanshield-analyst` | AI Analyst: 8 correlatie-regels, hypothese-engine, 13 threat classes, MITRE ATT&CK |
+| `saiyanshield-dashboard` | Vegeta Command Dashboard: DBZ-thema, SSE streaming, REST API |
+| `saiyanshield-watermark` | 5-laags watermerk: compile-time BLAKE3, runtime, steganografie, PQ signatures, protocol |
+| `saiyanshield-macros` | Procedural macro's voor zero-boilerplate configuratie |
+| `saiyanshield-client` | Client binary: PQ handshake, TUN routing, kill switch, dashboard server |
+| `saiyanshield-server` | Server binary: multi-client, TUN + NAT, per-client IP allocatie |
+| `saiyanshield-ai` | Python: 8 ML modellen (GAT, Transformer, MLP, LSTM, GRU, CNN, RL, Autoencoder) |
 
 ---
 
@@ -280,7 +293,7 @@ cargo clippy -- -D warnings
 ### Server starten
 
 ```bash
-sudo ./target/release/wimvpn-server \
+sudo ./target/release/saiyanshield-server \
     --bind 0.0.0.0 \
     --port 51820 \
     --verbose
@@ -289,7 +302,7 @@ sudo ./target/release/wimvpn-server \
 ### Client starten
 
 ```bash
-sudo ./target/release/wimvpn-client \
+sudo ./target/release/saiyanshield-client \
     --server 127.0.0.1 \
     --port 51820 \
     --stealth-mode https \
@@ -303,28 +316,30 @@ sudo ./target/release/wimvpn-client \
 http://localhost:3000
 ```
 
-Token wordt getoond bij opstart of staat in `/tmp/wimvpn-dashboard-token`.
+Token wordt getoond bij opstart of staat in `/tmp/saiyanshield-dashboard-token`.
 
 ---
 
 ## Feature Scripts
 
 ```bash
-./20 [token]                    # Health matrix — 20 algoritmen met kleurcoded bars
+./20 [token]                    # Scouter matrix — 20 algoritmen met power level bars
 ./On-Device [train|export|all]  # ML pipeline — training, ONNX export, evaluatie
 ./Triple-Layer [info|verify]    # Cipher stack info en encryptie verificatie
-./Traffic [status|test-fronting] # Traffic obfuscation tests
+./Traffic [status|test-fronting] # Ki-onderdrukking tests
 ./Web [start|status|test]       # Dashboard management
 ```
 
 ---
 
-## Kill Switch
+## Kill Switch — Saiyan Barrier
 
-Fail-closed firewall via dedicated `WIMVPN_KILLSWITCH` iptables chain:
+> *"Niemand komt hier doorheen!"* — Vegeta
+
+Fail-closed firewall via dedicated `SAIYANSHIELD_KILLSWITCH` iptables chain:
 
 - Blokkeert al het verkeer buiten de VPN tunnel
-- DNS leak preventie via `WIMVPN_DNS` chain
+- DNS leak preventie via `SAIYANSHIELD_DNS` chain
 - Automatische opruiming bij afsluiting (ook via `Drop` trait)
 - Retry logica: 3 pogingen + emergency flush
 
@@ -337,7 +352,7 @@ Fail-closed firewall via dedicated `WIMVPN_KILLSWITCH` iptables chain:
 | GET | `/` | Dashboard SPA |
 | GET | `/api/status` | Verbindingsstatus, versie, uptime, cipher suite |
 | GET | `/api/metrics` | Live verkeers- en prestatiemetrics |
-| GET | `/api/health` | 20 health algoritme rapporten |
+| GET | `/api/health` | 20 Scouter algoritme rapporten |
 | GET | `/api/config` | VPN configuratie |
 | POST | `/api/connect` | Verbinding starten |
 | POST | `/api/disconnect` | Verbinding verbreken |
@@ -351,6 +366,8 @@ Fail-closed firewall via dedicated `WIMVPN_KILLSWITCH` iptables chain:
 ---
 
 ## Beveiligingsmodel
+
+> *"Een ware Saiyan vecht altijd alleen!"* — Vegeta
 
 | Maatregel | Implementatie |
 |-----------|--------------|
@@ -380,9 +397,9 @@ Performance benchmarks via [Criterion.rs](https://github.com/bheisler/criterion.
 | Suite | Wat wordt gemeten |
 |-------|-------------------|
 | `crypto_bench` | KEM keypair/encap/decap, triple-layer encrypt/decrypt, packet serialisatie |
-| `protocol_bench` | Handshake roundtrip, session encrypt/decrypt (100B–10KB), multi-hop circuit build, onion encrypt |
+| `protocol_bench` | Handshake roundtrip, session encrypt/decrypt (100B-10KB), multi-hop circuit build, onion encrypt |
 | `signing_bench` | HybridSigner keypair generatie, sign (32B/1KB), verify |
-| `health_bench` | Alle 20 health algoritmen, per categorie (Network/Security/Performance/AiMl) |
+| `health_bench` | Alle 20 Scouter algoritmen, per categorie (Network/Security/Performance/AiMl) |
 | `analyst_bench` | AnalystEngine ingest: gezonde batch, attack batch |
 | `stealth_bench` | Domain fronting SNI-vervanging, watermark verificatie |
 
@@ -417,8 +434,8 @@ Persistente identiteitssleutels voor server en client:
 
 - **Automatisch genereren** — Sleutels worden gegenereerd bij eerste opstart als ze niet bestaan
 - **Veilige opslag** — Bestanden met `0600` permissies (alleen eigenaar)
-- **Server**: KEM + signing keypairs in `/etc/wimvpn/keys/`
-- **Client**: KEM + signing keypairs in `/etc/wimvpn/client-keys/`
+- **Server**: KEM + signing keypairs in `/etc/saiyanshield/keys/`
+- **Client**: KEM + signing keypairs in `/etc/saiyanshield/client-keys/`
 - **Server public key distributie** — Client laadt server public key via `server_public_key_path` config
 
 ---
@@ -428,3 +445,5 @@ Persistente identiteitssleutels voor server en client:
 **Copyright (c) 2026 WimLee115. Alle rechten voorbehouden.**
 
 Gemaakt door [WimLee115](https://github.com/WimLee115)
+
+> *"Kakarot... Ik zal je overtreffen!"* — Vegeta
